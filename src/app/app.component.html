@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+   {{ title }}!
+  </h1>
+
+  <h2>Employees Records</h2>
+  <data-component
+    [employeeName]="employee.eName"
+    [employeeCity]="employee.eCity"
+    [employeeSalary]="employee.eSalary"
+    (sendRecord) = "getRecord()"
+   *ngFor="let employee of employeeRecords">The Employees Record Desplay</data-component>
+</div>
+
+
