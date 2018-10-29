@@ -31,8 +31,12 @@ export class AppComponent {
     }
   ];
 
-  public getRecord() :void {
-    console.log("sendRecord Event Emitted");
+  public selectedEmployeeData: any;
+
+  public getRecord(data: any) :void {
+    // console.log("sendRecord Event Emitted");
+    this.selectedEmployeeData = data;
+
   }
 
 

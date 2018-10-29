@@ -15,17 +15,23 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     `
 })
 export class DataComponent {
-  @Input()
+  @Input("name")
   employeeName: string;
-  @Input()
+  @Input("city")
   employeeCity: string;
-  @Input()
+  @Input("salary")
   employeeSalary: number;
 
   @Output()
   sendRecord: EventEmitter<any> = new EventEmitter();
 
     public emitSendRecordEvent () {
-      this.sendRecord.emit();
+      let selectedEmployeeObj: any = {
+        selectedName: this.employeeName,
+        selectedCity: this.employeeCity,
+        selectedSalary: this.employeeSalary
+      }
+
+      this.sendRecord.emit(selectedEmployeeObj);
   }
 }

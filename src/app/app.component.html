@@ -3,13 +3,19 @@
   <h1>
    {{ title }}!
   </h1>
-
+  <h4>Selected Outpu Data</h4>
+  <h3>Name: <span style="color:yellow; font-size:20px">
+      {{ selectedEmployeeData?.selectedName }}</span></h3>
+  <h3>City: <span style="color:yellow; font-size:20px">
+      {{ selectedEmployeeData?.selectedCity }} </span></h3>
+  <h3>Salary: <span style="color:yellow; font-size:20px">
+      {{ selectedEmployeeData?.selectedSalary }}</span></h3>
   <h2>Employees Records</h2>
   <data-component
-    [employeeName]="employee.eName"
-    [employeeCity]="employee.eCity"
-    [employeeSalary]="employee.eSalary"
-    (sendRecord) = "getRecord()"
+    [name]="employee.eName"
+    [city]="employee.eCity"
+    [salary]="employee.eSalary"
+    (sendRecord) = "getRecord($event)"
    *ngFor="let employee of employeeRecords">The Employees Record Desplay</data-component>
 </div>
 
